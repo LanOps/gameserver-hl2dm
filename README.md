@@ -10,20 +10,20 @@ You must create the mount directory and give the container full read and write p
 
 ```
 docker run -it --name "HL2DM"                        \
-    -v /path/to/local/m:/home/steam/hl2mp            \
+    -v /path/to/local/m:/home/steam/hl2dm            \
     -p 27015:27015                                  \
     -p 27015:27015/udp                              \
-    lanopsdev/gameserver-hl2mp
+    lanopsdev/gameserver-hl2dm
 ```
 
 You can also use the Entrypoint and CMD to customize configs and plugins like you would normally with SRCDS (Port & Tickrate must be changed via Env Variable)
 
 ```
 docker run -it --name "HL2DM"                        \
-    -v /path/to/local/m:/home/steam/hl2mp            \
+    -v /path/to/local/m:/home/steam/hl2dm            \
     -p 27015:27015                                  \
     -p 27015:27015/udp                              \
-    lanopsdev/gameserver-hl2mp                      \
+    lanopsdev/gameserver-hl2dm                      \
     -maxplayers_override ${SRCDS_MAXPLAYERS}        \
     +sv_pure ${SRCDS_PURE}                          \
     +sv_region ${SRCDS_REGION}                      \
