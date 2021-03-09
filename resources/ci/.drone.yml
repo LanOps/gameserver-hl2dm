@@ -13,7 +13,7 @@ steps:
       from_secret: DISCORD_WEBHOOK_URL
     template: |
       {
-        "username": "CSGO Docker CI",
+        "username": "HL2DM Docker CI",
         "content": "__***{{uppercase build.branch }}***__ - \"${DRONE_COMMIT_MESSAGE}\" - Build Started.",
         "avatar_url": "https://cdn.worldvectorlogo.com/logos/drone.svg"
       }
@@ -30,7 +30,7 @@ steps:
       from_secret: DISCORD_WEBHOOK_URL
     template: |
       {
-        "username": "CSGO Docker CI",
+        "username": "HL2DM Docker CI",
         "content": "__**TAGGED**__ - \"${DRONE_COMMIT_MESSAGE}\" - Build Started.",
         "avatar_url": "https://cdn.worldvectorlogo.com/logos/drone.svg"
       }
@@ -45,7 +45,7 @@ steps:
 - name: build-push-image-master-latest
   image: plugins/docker
   settings:
-    repo: lanopsdev/gameserver-csgo
+    repo: lanopsdev/gameserver-hl2dm
     tags: 
     - latest
     username:
@@ -61,7 +61,7 @@ steps:
 - name: build-push-image-master-tagged
   image: plugins/docker
   settings:
-    repo: lanopsdev/gameserver-csgo
+    repo: lanopsdev/gameserver-hl2dm
     tags: 
     - ${DRONE_TAG}
     username:
@@ -83,7 +83,7 @@ steps:
       from_secret: DISCORD_WEBHOOK_URL
     template: |
       {
-        "username": "CSGO Docker CI",
+        "username": "HL2DM Docker CI",
         "content": "__***{{uppercase build.branch }}***__ - \"${DRONE_COMMIT_MESSAGE}\" - Commit: {{ build.commit }} Failed. Fix me please!",
         "avatar_url": "https://cdn.worldvectorlogo.com/logos/drone.svg"
       }
@@ -98,7 +98,7 @@ steps:
       from_secret: DISCORD_WEBHOOK_URL
     template: |
       {
-        "username": "CSGO Docker CI",
+        "username": "HL2DM Docker CI",
         "content": "__***{{uppercase build.branch }}***__ - \"${DRONE_COMMIT_MESSAGE}\" - Commit: {{ build.commit }} - Image has been built and pushed to Docker Hub.",
         "avatar_url": "https://cdn.worldvectorlogo.com/logos/drone.svg"
       }
@@ -115,7 +115,7 @@ steps:
       from_secret: DISCORD_WEBHOOK_URL
     template: |
       {
-        "username": "CSGO Docker CI",
+        "username": "HL2DM Docker CI",
         "content": "__**TAGGED**__ - \"${DRONE_COMMIT_MESSAGE}\" - Commit: {{ build.commit }} - Image has been built and pushed to Docker Hub.",
         "avatar_url": "https://cdn.worldvectorlogo.com/logos/drone.svg"
       }
@@ -130,6 +130,6 @@ trigger:
   - master
 ---
 kind: signature
-hmac: 10955d5566a53a60d79322b9ad87f2e419dc7e896ede680511b18b447ce9fb1f
+hmac: 73816d858f8793923549ec4c3260d535a44ca7d7653a27077e693fb148f4c0db
 
 ...
