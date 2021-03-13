@@ -43,33 +43,33 @@ fi
 
 # Update MetaMod
 
-# if [ "$getMetaMod" = "true" ];
-# then
-#     curl -sSL https://mms.alliedmods.net/mmsdrop/$METAMOD_VERSION_MAJOR/mmsource-$METAMOD_VERSION_MAJOR.$METAMOD_VERSION_MINOR-git$METAMOD_BUILD-linux.tar.gz \
-#         -o /tmp/metamod.tar.gz
-#     tar -xzvf /tmp/metamod.tar.gz --directory $SRCDS_SRV_DIR/hl2dm
-#     rm /tmp/metamod.tar.gz
-#     if [ -f "hl2dm/addons/mm-version" ];
-#     then
-#         rm hl2dm/addons/mm-version
-#     fi
-#     echo "${METAMOD_VERSION_MAJOR}.${METAMOD_VERSION_MINOR}-${METAMOD_BUILD}" > hl2dm/addons/mm-version
-# fi
+if [ "$getMetaMod" = "true" ];
+then
+    curl -sSL https://mms.alliedmods.net/mmsdrop/$METAMOD_VERSION_MAJOR/mmsource-$METAMOD_VERSION_MAJOR.$METAMOD_VERSION_MINOR-git$METAMOD_BUILD-linux.tar.gz \
+        -o /tmp/metamod.tar.gz
+    tar -xzvf /tmp/metamod.tar.gz --directory $SRCDS_SRV_DIR/hl2dm
+    rm /tmp/metamod.tar.gz
+    if [ -f "hl2dm/addons/mm-version" ];
+    then
+        rm hl2dm/addons/mm-version
+    fi
+    echo "${METAMOD_VERSION_MAJOR}.${METAMOD_VERSION_MINOR}-${METAMOD_BUILD}" > hl2dm/addons/mm-version
+fi
 
 # Update SourceMod
 
-# if [ "$getSourceMod" = "true" ];
-# then
-#     curl -sSL https://sm.alliedmods.net/smdrop/$SOURCEMOD_VERSION_MAJOR/sourcemod-$SOURCEMOD_VERSION_MAJOR.$SOURCEMOD_VERSION_MINOR-git$SOURCEMOD_BUILD-linux.tar.gz \
-#         -o /tmp/sourcemod.tar.gz
-#     tar -xzvf /tmp/sourcemod.tar.gz --directory $SRCDS_SRV_DIR/hl2dm
-#     rm /tmp/sourcemod.tar.gz
-#     if [ -f "hl2dm/addons/sm-version" ];
-#     then
-#         rm hl2dm/addons/sm-version
-#     fi
-#     echo "${SOURCEMOD_VERSION_MAJOR}.${SOURCEMOD_VERSION_MINOR}-${SOURCEMOD_BUILD}" > hl2dm/addons/sm-version
-# fi
+if [ "$getSourceMod" = "true" ];
+then
+    curl -sSL https://sm.alliedmods.net/smdrop/$SOURCEMOD_VERSION_MAJOR/sourcemod-$SOURCEMOD_VERSION_MAJOR.$SOURCEMOD_VERSION_MINOR-git$SOURCEMOD_BUILD-linux.tar.gz \
+        -o /tmp/sourcemod.tar.gz
+    tar -xzvf /tmp/sourcemod.tar.gz --directory $SRCDS_SRV_DIR/hl2dm
+    rm /tmp/sourcemod.tar.gz
+    if [ -f "hl2dm/addons/sm-version" ];
+    then
+        rm hl2dm/addons/sm-version
+    fi
+    echo "${SOURCEMOD_VERSION_MAJOR}.${SOURCEMOD_VERSION_MINOR}-${SOURCEMOD_BUILD}" > hl2dm/addons/sm-version
+fi
 
 # Run Server
 
