@@ -46,4 +46,4 @@ EXPOSE 27020 27005 51840
 # Start Server
 
 ENTRYPOINT ["/home/steam/startServer.sh"]
-CMD ['+sv_pure 1', '+sv_region -1', '+sv_lan 0', '+map de_dust2', '+game_type 0', '+game_mode 0', '+mapgroup mg_active', '+ip 0.0.0.0']
+CMD ['+sv_pure 1', '+sv_region -1', '+sv_lan 0', '+map dm_lockdown', '+ip 0.0.0.0']
