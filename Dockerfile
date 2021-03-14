@@ -7,12 +7,12 @@ ENV SRCDS_PORT 27015
 
 # Env - Server
 
-ENV SRCDS_SRV_DIR /home/steam/hl2dm
+ENV SRCDS_SRV_DIR /home/steam/hl2mp
 ENV SRCDS_APP_ID 232370
 
 # Env - SourceMod & MetaMod
 
-ENV SOURCEMOD_VERSION_MAJOR 1.9
+ENV SOURCEMOD_VERSION_MAJOR 1.10
 ENV SOURCEMOD_VERSION_MINOR 0
 ENV SOURCEMOD_BUILD 6276
 ENV METAMOD_VERSION_MAJOR 1.10
@@ -29,7 +29,7 @@ RUN { \
         echo 'force_install_dir $SRCDS_SRV_DIR'; \
         echo 'app_update $SRCDS_APP_ID'; \
         echo 'quit'; \
-} > /home/steam/hl2dm_update.txt
+} > /home/steam/hl2mp_update.txt
 ADD resources/root/startServer.sh /home/steam/startServer.sh
 
 # Pre Load LanOps Server Configs

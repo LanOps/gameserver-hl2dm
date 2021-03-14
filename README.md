@@ -10,7 +10,7 @@ You must create the mount directory and give the container full read and write p
 
 ```
 docker run -it --name "HL2DM"                        \
-    -v /path/to/local/m:/home/steam/hl2dm            \
+    -v /path/to/local/m:/home/steam/hl2mp            \
     -p 27015:27015                                  \
     -p 27015:27015/udp                              \
     lanopsdev/gameserver-hl2dm
@@ -20,7 +20,7 @@ You can also use the Entrypoint and CMD to customize configs and plugins like yo
 
 ```
 docker run -it --name "HL2DM"                        \
-    -v /path/to/local/m:/home/steam/hl2dm            \
+    -v /path/to/local/m:/home/steam/hl2mp            \
     -p 27015:27015                                  \
     -p 27015:27015/udp                              \
     lanopsdev/gameserver-hl2dm                      \
