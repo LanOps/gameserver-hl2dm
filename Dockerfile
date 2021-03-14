@@ -34,7 +34,7 @@ ADD resources/root/startServer.sh /home/steam/startServer.sh
 
 # Pre Load LanOps Server Configs
 
-RUN mkdir -p ${SRCDS_SRV_DIR}/hl2dm/cfg/
+RUN mkdir -p ${SRCDS_SRV_DIR}/hl2mp/cfg/
 COPY resources/root/cfg /tmp/cfg/
 
 # Expose Ports
@@ -46,4 +46,4 @@ EXPOSE 27020 27005 51840
 # Start Server
 
 ENTRYPOINT ["/home/steam/startServer.sh"]
-CMD ['+sv_pure 1', '+sv_region -1', '+sv_lan 0', '+map dm_lockdown', '+ip 0.0.0.0']
+CMD ["+sv_pure 1 +sv_region -1 +sv_lan 0  +exec server.cfg +map dm_lockdown +ip 0.0.0.0"]
