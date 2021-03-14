@@ -24,14 +24,11 @@ docker run -it --name "HL2DM"                        \
     -p 27015:27015                                  \
     -p 27015:27015/udp                              \
     lanopsdev/gameserver-hl2dm                      \
-    -maxplayers_override ${SRCDS_MAXPLAYERS}        \
+    +maxplayers ${SRCDS_MAXPLAYERS}        \
     +sv_pure ${SRCDS_PURE}                          \
     +sv_region ${SRCDS_REGION}                      \
     +sv_lan ${SRCDS_LAN}                            \
     +map ${SRCDS_MAP}                               \
-    +game_type ${SRCDS_GAME_TYPE}                   \
-    +game_mode ${SRCDS_GAME_MODE}                   \
-    +mapgroup ${SRCDS_MAP_GROUP}                    \
     +ip 0.0.0.0
 
 ```
